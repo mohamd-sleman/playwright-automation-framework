@@ -1,9 +1,9 @@
 # Playwright Automation Framework
 
-A personal learning workspace for practicing UI and API test automation with
-**Playwright**, **Selenium**, and **pytest** in Python. Each `lessonN/`
-folder is a self-contained exercise from a different point in the course —
-they are not meant to import from one another.
+A personal learning workspace for practicing UI, API, and AI test automation
+with **Playwright**, **Selenium**, **pytest**, and **DeepEval** in Python. Each
+numbered folder is a self-contained exercise named after its topic — they are
+not meant to import from one another.
 
 ## Setup
 
@@ -14,15 +14,15 @@ pip install -r requirements.txt
 playwright install
 ```
 
-Some lessons read credentials from a `.env` file (see `lesson11/.env` for an
-example using the public SauceDemo test account).
+Some lessons read credentials from a `.env` file (see `07_pom_env_config/.env`
+for an example using the public SauceDemo test account).
 
 ## Running tests
 
-Each lesson folder is independent, so run pytest from inside it:
+Each folder is independent, so run pytest from inside it:
 
 ```bash
-cd lesson10
+cd 06_page_object_model
 pytest
 ```
 
@@ -30,21 +30,22 @@ pytest
 
 | Folder | Topic |
 | --- | --- |
-| `lesson3.py` | Plain Python practice: conditional/dict logic (no browser). |
-| `lesson4.py` | Plain Python practice: validating a list of API-call results. |
-| `lesson6/` | API testing with `requests` against reqres.in (raw scripts + pytest tests). |
-| `lesson7/` | Selenium WebDriver basics: locators, login flows, waits. |
-| `lesson8/tests/` | Playwright sync API basics: page actions, API requests, tracing. |
-| `lesson9/tests/` | Playwright assertions (`expect`), Inspector, tracing, hybrid UI+API tests. |
-| `lesson10/` | Page Object Model with Playwright + pytest fixtures (login, inventory, checkout). |
-| `lesson11/` | POM continued: `.env`-based config, fixtures, checkout page object. |
-| `training.py`, `test_car.py` | Small pytest fixture/parametrize exercises. |
+| `01_python_basics/` | Plain Python and pytest practice: conditionals, API-result validation, fixtures/parametrize. |
+| `02_api_testing/` | API testing with `requests` against reqres.in (raw scripts + pytest tests). |
+| `03_selenium_basics/` | Selenium WebDriver basics: locators, login flows, waits. |
+| `04_playwright_basics/` | Playwright sync API basics: page actions, API requests. |
+| `05_playwright_assertions_tracing/` | Playwright assertions (`expect`), Inspector, tracing, hybrid UI+API tests. |
+| `06_page_object_model/` | Page Object Model with Playwright + pytest fixtures (login, inventory, checkout). |
+| `07_pom_env_config/` | POM continued: `.env`-based config, fixtures, checkout page object. |
+| `08_api_login_fixtures/` | Fast login via cookie injection, side-menu page object, inventory homework. |
+| `09_ai_testing_deepeval/` | LLM answer-relevancy testing with DeepEval (cloud and local Ollama models). |
+| `10_rag_and_ai_red_teaming/` | RAG relevancy tests and promptfoo red-teaming configs. |
+| `11_llm_tracing_phoenix/` | LLM tracing with Arize Phoenix + OpenInference, trace export to CSV. |
+| `12_full_stack_testing/` | Combined API + UI + AI test in one flow. |
 | `trace.zip` | Sample Playwright trace, viewable with `playwright show-trace trace.zip`. |
 
 ## Notes
 
-- Files/folders are named to match `lessonN` consistently (older names like
-  `lesoon4`, `lesoon6`, `leson7`, and `lesson 11` were renamed for
-  consistency — no content was removed).
-- `__pycache__/`, `.pytest_cache/`, and `.env` are git-ignored; see
-  `.gitignore`.
+- Folders are numbered in course order and named after their content.
+- `__pycache__/`, `.pytest_cache/`, `.env`, and generated `traces_*.csv` are
+  git-ignored; see `.gitignore`.
